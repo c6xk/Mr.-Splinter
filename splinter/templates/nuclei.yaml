@@ -1,0 +1,6 @@
+name: nuclei
+install: |
+  mkdir splinter_tools
+  wget https://github.com/projectdiscovery/nuclei/releases/download/v3.4.2/nuclei_3.4.2_linux_amd64.zip -O splinter_tools/nuclei_3.4.2_linux_amd64.zip 
+  cd splinter_tools && unzip -oq nuclei_3.4.2_linux_amd64.zip
+execute: cd splinter_tools && ./nuclei -l targets.txt -t cves/ -no-stdin
